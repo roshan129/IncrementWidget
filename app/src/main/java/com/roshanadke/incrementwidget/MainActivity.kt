@@ -1,5 +1,6 @@
 package com.roshanadke.incrementwidget
 
+import android.content.Context
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -10,7 +11,11 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
+import androidx.glance.appwidget.updateAll
+import com.roshanadke.incrementwidget.ui.IncrementWidget
 import com.roshanadke.incrementwidget.ui.theme.IncrementWidgetTheme
+import kotlinx.coroutines.runBlocking
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,6 +28,10 @@ class MainActivity : ComponentActivity() {
                         Modifier.padding(innerPadding)
                     ) {
                         Text(text = "Widget App")
+                        val context = LocalContext.current
+                        runBlocking {
+                            IncrementWidget().updateAll(context)
+                        }
                     }
                 }
             }
