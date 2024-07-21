@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
 import androidx.compose.ui.Modifier
 import com.roshanadke.incrementwidget.ui.theme.IncrementWidgetTheme
 
@@ -21,7 +22,7 @@ class MainActivity : ComponentActivity() {
                     Column(
                         Modifier.padding(innerPadding)
                     ) {
-
+                        Text(text = "Widget App")
                     }
                 }
             }
