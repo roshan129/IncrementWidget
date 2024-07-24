@@ -34,8 +34,7 @@ class GlanceRepository(
     fun incrementCount() {
         scope.launch {
             context.datastore.edit { preferences ->
-                var count = preferences[PreferencesKeys.count]
-                preferences[PreferencesKeys.count] = count?.plus(1) ?: 1
+                preferences[PreferencesKeys.count] = (preferences[PreferencesKeys.count] ?: 0) + 1
             }
         }
     }
@@ -43,8 +42,7 @@ class GlanceRepository(
     fun decrementCount() {
         scope.launch {
             context.datastore.edit { preferences ->
-                var count = preferences[PreferencesKeys.count]
-                preferences[PreferencesKeys.count] = count?.minus(1) ?: -1
+                preferences[PreferencesKeys.count] = (preferences[PreferencesKeys.count] ?: 0) - 1
             }
         }
     }
