@@ -5,5 +5,5 @@
     android:minHeight="80dp"
     android:resizeMode="vertical|horizontal"
     android:widgetCategory="home_screen"
-
+    android:initialLayout="@layout/glance_default_loading_layout"
     />
