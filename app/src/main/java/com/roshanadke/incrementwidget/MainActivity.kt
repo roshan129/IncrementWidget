@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.glance.appwidget.updateAll
@@ -28,7 +29,7 @@ class MainActivity : ComponentActivity() {
                     ) {
                         Text(text = "Widget App")
                         val context = LocalContext.current
-                        runBlocking {
+                        LaunchedEffect(Unit) {
                             IncrementWidget().updateAll(context)
                         }
                     }
