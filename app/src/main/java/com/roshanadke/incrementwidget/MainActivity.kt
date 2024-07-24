@@ -13,7 +13,6 @@ import androidx.compose.material3.Text
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.glance.appwidget.updateAll
-import com.roshanadke.incrementwidget.ui.IncrementWidget
 import com.roshanadke.incrementwidget.ui.theme.IncrementWidgetTheme
 import kotlinx.coroutines.runBlocking
 
